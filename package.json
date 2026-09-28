@@ -1,0 +1,17 @@
+{
+  "name": "xiaochuan-shop",
+  "version": "1.0.0",
+  "description": "二手虚拟商品小摊",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@vercel/kv": "^1.0.1",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
