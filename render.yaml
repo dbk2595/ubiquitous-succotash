@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: xiaochuan-shop
+    runtime: node
+    plan: free                # 免费层:512MB RAM,15 分钟无请求休眠
+    region: singapore         # 离国内近,延迟低,国内可访问
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/goods
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_PWD       # 管理员密码,建议改成自己的
+        value: 200212
+      # 付费 Starter+ 才能挂载磁盘持久化 data.json
+      # 免费层重启会丢数据,如需持久化请升档
+      # - key: DATA_DIR
+      #   value: /data
+    # disk:
+    #   name: data
+    #   mountPath: /data
+    #   sizeGB: 1              # 仅 Starter+ 可用
